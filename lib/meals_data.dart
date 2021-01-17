@@ -2,80 +2,70 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/models/categories.dart';
 import 'models/meals.dart';
 
-var CATEGORIES_DATA = [
+const CATEGORIES_DATA = [
   Categories(
     id: 'c1',
     title: 'Italian',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c2',
     title: 'Quick & Easy',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c3',
     title: 'Hamburgers',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c4',
     title: 'German',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c5',
     title: 'Light & Lovely',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c6',
     title: 'Exotic',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c7',
     title: 'Breakfast',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c8',
     title: 'Asian',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c9',
     title: 'French',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
   Categories(
     id: 'c10',
     title: 'Summer',
     imageUrl: '',
-    color1: Colors.blue[700],
-    color2: Colors.blue[800],
+    color: Colors.red,
   ),
 ];
 
-var MEALS_DATA = [
+const MEALS_DATA = [
   Meals(
     id: 'm1',
     categories: [
