@@ -39,7 +39,14 @@ class _MealsScreenState extends State<MealsScreen> {
         ),
         body: ListView.builder(
           itemBuilder: (BuildContext context, int index) {
-            return Text('');
+            return Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  Text(mealData[index].title),
+                ],
+              ),
+            );
           },
           itemCount: mealData.length,
         ),
