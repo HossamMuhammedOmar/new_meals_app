@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:meals_app/models/categories.dart';
 
 class Meals {
   final String id;
