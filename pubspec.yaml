@@ -65,8 +65,9 @@ flutter:
           weight: 700
         # - asset: fonts/Raleway-Black.ttf
         #   weight: 900
-    - family: RobotoCondensed
+    - family: YuseiMagic
       fonts:
+        - asset: assets/fonts/YuseiMagic-Regular.ttf
         - asset: assets/fonts/RobotoCondensed-Regular.ttf
         - asset: assets/fonts/RobotoCondensed-Bold.ttf
           weight: 700
