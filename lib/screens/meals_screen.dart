@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/meals_data.dart';
+import 'package:meals_app/widgets/meal_widget.dart';
 
 class MealsScreen extends StatefulWidget {
   static const String routName = 'MealsScreen';
@@ -38,14 +39,14 @@ class _MealsScreenState extends State<MealsScreen> {
           ),
         ),
         body: ListView.builder(
+          physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              padding: EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Text(mealData[index].title),
-                ],
-              ),
+            return MealsWidget(
+              mealData[index].imageUrl,
+              mealData[index].title,
+              mealData[index].duration,
+              mealData[index].complexity,
+              mealData[index].affordability,
             );
           },
           itemCount: mealData.length,

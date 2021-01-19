@@ -7,6 +7,8 @@ class HomeScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(
+          shadowColor: Colors.black,
+          elevation: 7,
           toolbarHeight: 90.0,
           flexibleSpace: Container(
             decoration: BoxDecoration(
@@ -14,8 +16,8 @@ class HomeScreen extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: <Color>[
-                  Color(0xFF0a0e11),
-                  Color(0xFF161f27),
+                  Color(0xFFd68438),
+                  Color(0xFFf1b24b),
                 ],
               ),
             ),
