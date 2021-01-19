@@ -9,7 +9,12 @@ class CategoriesWidget extends StatelessWidget {
   final Color color2;
 
   CategoriesWidget(
-      this.id, this.title, this.imageUrl, this.color1, this.color2);
+    this.id,
+    this.title,
+    this.imageUrl,
+    this.color1,
+    this.color2,
+  );
 
   _onTapCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
@@ -17,6 +22,8 @@ class CategoriesWidget extends StatelessWidget {
       arguments: {
         'id': id,
         'title': title,
+        'color1': color1,
+        'color2': color2,
       },
     );
   }

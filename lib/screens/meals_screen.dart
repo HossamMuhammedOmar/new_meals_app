@@ -15,6 +15,8 @@ class _MealsScreenState extends State<MealsScreen> {
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
     final catId = routArg['id'];
     final catTitle = routArg['title'];
+    final color1 = routArg['color1'];
+    final color2 = routArg['color2'];
     final mealData =
         MEALS_DATA.where((meal) => meal.categories.contains(catId)).toList();
     return Container(
@@ -27,8 +29,10 @@ class _MealsScreenState extends State<MealsScreen> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: <Color>[
-                  Color(0xffEF8A17),
-                  Color(0xffF0DF43),
+                  color2,
+                  color1,
+                  // Color(0xFFd68438),
+                  // Color(0xFFf1b24b),
                 ],
               ),
             ),
