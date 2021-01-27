@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meals.dart';
+import 'package:meals_app/screens/meal_detail_screen.dart';
 
 class MealsWidget extends StatelessWidget {
   // Variables Declaration
@@ -8,17 +9,50 @@ class MealsWidget extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final String id;
 
-  const MealsWidget(
-    this.imageUrl,
-    this.title,
-    this.duration,
-    this.complexity,
-    this.affordability,
-  );
+  const MealsWidget(this.imageUrl, this.title, this.duration, this.complexity,
+      this.affordability, this.id);
+
+  String get complexityToString {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+        break;
+      case Complexity.Medium:
+        return 'Medium';
+        break;
+      case Complexity.Hard:
+        return 'Hard';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityToString {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Luxurious:
+        return 'Luxurious';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
 
   // ******* Start Helper Methods *******//
-  void _onTapMeal() {}
+  void _onTapMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      MealDetailScreen.routName,
+      arguments: id,
+    );
+  }
   // ******* End Helper Methods *******//
 
   // Build Method
@@ -27,6 +61,11 @@ class MealsWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
+        // gradient: LinearGradient(
+        //   colors: [Colors.white, Colors.grey[300].withOpacity(0.9)],
+        //   begin: Alignment.bottomLeft,
+        //   end: Alignment.topRight,
+        // ),
         border: Border.all(width: 1, color: Colors.grey[200]),
         borderRadius: BorderRadius.circular(15.0),
         boxShadow: [
@@ -44,7 +83,7 @@ class MealsWidget extends StatelessWidget {
           topLeft: Radius.circular(15.0),
           bottomLeft: Radius.circular(15.0),
         ),
-        onTap: _onTapMeal,
+        onTap: () => _onTapMeal(context),
         child: Column(
           children: [
             Row(
@@ -73,32 +112,50 @@ class MealsWidget extends StatelessWidget {
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          duration.toString().trim(),
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                        SizedBox(height: 15.0),
+                        Row(
+                          children: [
+                            Icon(Icons.schedule, size: 20.0),
+                            SizedBox(width: 5.0),
+                            Text(
+                              duration.toString().trim() + ' min',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          complexity.toString(),
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                        SizedBox(height: 6.0),
+                        Row(
+                          children: [
+                            Icon(Icons.work_outline, size: 20.0),
+                            SizedBox(width: 5.0),
+                            Text(
+                              complexityToString,
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          affordability.toString(),
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                        SizedBox(height: 6.0),
+                        Row(
+                          children: [
+                            Icon(Icons.attach_money, size: 20.0),
+                            SizedBox(width: 5.0),
+                            Text(
+                              affordabilityToString,
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
                       ],
                     ),

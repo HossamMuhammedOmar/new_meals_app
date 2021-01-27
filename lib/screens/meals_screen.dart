@@ -51,6 +51,7 @@ class _MealsScreenState extends State<MealsScreen> {
               mealData[index].duration,
               mealData[index].complexity,
               mealData[index].affordability,
+              mealData[index].id,
             );
           },
           itemCount: mealData.length,
