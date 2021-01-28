@@ -75,6 +75,10 @@ flutter:
           weight: 300
         - asset: assets/fonts/RobotoCondensed-Italic.ttf
           style: italic
+    - family: DancingScript
+      fonts:
+        - asset: assets/fonts/DancingScript-Medium.ttf
+        - asset: assets/fonts/DancingScript-Bold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

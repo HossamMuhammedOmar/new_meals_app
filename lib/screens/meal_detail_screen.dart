@@ -9,30 +9,43 @@ class MealDetailScreen extends StatelessWidget {
     final mealDetails =
         MEALS_DATA.where((meal) => meal.id.contains(mealId)).toList();
     return Scaffold(
-      body: Stack(
+      body: Column(
         children: [
-          Container(
-            height: 220.0,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(mealDetails.first.imageUrl),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.3), BlendMode.srcOver),
+          Stack(
+            children: [
+              Container(
+                height: 220.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(mealDetails.first.imageUrl),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.3), BlendMode.srcOver),
+                  ),
+                ),
               ),
+              Positioned(
+                top: 30.0,
+                left: 10.0,
+                child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 30.0,
+                      color: Colors.white,
+                    ),
+                    onPressed: () => Navigator.pop(context)),
+              )
+            ],
+          ),
+          SizedBox(height: 15.0),
+          Text(
+            'Ingredients',
+            style: TextStyle(
+              fontFamily: 'DancingScript',
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          Positioned(
-            top: 30.0,
-            left: 10.0,
-            child: IconButton(
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  size: 30.0,
-                  color: Colors.white,
-                ),
-                onPressed: () => Navigator.pop(context)),
-          )
         ],
       ),
     );
